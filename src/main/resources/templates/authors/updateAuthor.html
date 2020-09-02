@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layout}">
+<head>
+    <title>Authors</title>
+</head>
+<body>
+<div layout:fragment="content" th:remove="tag">
+    <div class="container">
+        <h1>Book Management System</h1>
+        <hr>
+        <h2>Update Author</h2>
+
+        <form action="#" th:action="@{/authors/saveAuthor}" th:object="${author}" method="POST">
+
+            <input type="hidden" th:field="*{id}" />
+
+            <input type="text" th:field="*{name}" placeholder="Author Name" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{genre}" placeholder="Genre" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{age}" placeholder="Age" class="form-control mb-4 col-4">
+
+
+            <button type="submit" class="btn btn-info col-2"> Update Author</button>
+        </form>
+
+        <hr>
+
+        <a th:href="@{/authors/list}"> Back to Author List</a>
+    </div>
+</div>
+</body>
+</html>
